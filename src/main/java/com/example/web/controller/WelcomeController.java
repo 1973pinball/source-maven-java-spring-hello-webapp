@@ -15,9 +15,11 @@ public class WelcomeController {
 
     @GetMapping("/")
     public String index(Model model) {
+        SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        
         logger.debug("Welcome to example.com...");
         model.addAttribute("msg", getMessage());
-        model.addAttribute("today", new Date());
+        model.addAttribute("today", dateFormat.format(new Date()));
         return "index";
     }
 

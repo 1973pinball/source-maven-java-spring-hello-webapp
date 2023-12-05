@@ -5,7 +5,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import java.text.SimpleDateFormat;
+
 import java.util.Date;
 
 @Controller
@@ -15,11 +15,9 @@ public class WelcomeController {
 
     @GetMapping("/")
     public String index(Model model) {
-        SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-        
         logger.debug("Welcome to example.com...");
         model.addAttribute("msg", getMessage());
-        model.addAttribute("today", dateFormat.format(new Date()));
+        model.addAttribute("today", new Date());
         return "index";
     }
 

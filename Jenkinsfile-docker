@@ -27,13 +27,13 @@ pipeline {
     stage('Build Docker Image') {
       agent any
       steps {
-        sh 'docker image build -t myweb .'
+        sh 'docker image build -t 1973pinball/myweb .'
       }
     }
     stage('Tag Docker Image') {
       agent any
       steps {
-        sh 'docker iamge tag myweb myweb:v2'
+        sh 'docker image tag 1973pinball/myweb 1973pinball/myweb:v2'
       }
     }
     stage('Publish Docker Image') {

@@ -4,6 +4,9 @@ pipeline {
       yamlFile 'pods.yaml'
     }
   }
+  triggers { 
+    githubPush()
+  }
   stages {
     stage('Checkout') {
       steps {
